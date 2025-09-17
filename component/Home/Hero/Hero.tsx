@@ -1,6 +1,6 @@
 "use client";
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
 import { BsArrowRight } from "react-icons/bs";
 import Typewriter from "typewriter-effect";
 import ParticlesHero from "./ParticleBackground";
@@ -16,7 +16,7 @@ const Hero = () => {
 
       <div className="relative z-10 flex flex-col items-center">
         <Image
-          src="/images/s1.jpg"
+          src="/Images/s1.jpg"
           alt="HeroImage"
           width={150}
           height={150}

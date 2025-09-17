@@ -14,28 +14,28 @@ const Services = () => {
       >
         <div data-aos="fade-right" data-aos-anchor-placement="top-center" >
           <ServiceCards
-            icon="/images/s1.png"
+            icon="/Images/s1.png"
             name="UI and UX"
             description="Designing intuitive, user-focused interfaces that boost engagement and improve business outcomes."
           />
         </div>
         <div data-aos="fade-right" data-aos-anchor-placement="top-center" data-aos-delay="100" >
           <ServiceCards
-            icon="/images/s2.png"
+            icon="/Images/s2.png"
             name="Web Applications"
             description="Building modern, responsive apps with React, Next.js, and cloud tech for scalable performance."
           />
         </div>
         <div data-aos="fade-right" data-aos-anchor-placement="top-center" data-aos-delay="200">
           <ServiceCards
-            icon="/images/s3.png"
+            icon="/Images/s3.png"
             name="Design & Creative"
             description="Crafting compelling visuals and brand assets that enhance identity and drive audience engagement."
           />
         </div>
         <div data-aos="fade-right" data-aos-anchor-placement="top-center" data-aos-delay="300">
           <ServiceCards
-            icon="/images/s4.png"
+            icon="/Images/s4.png"
             name="Development"
             description="Delivering clean, maintainable code with modern frameworks to ensure security, speed, and scalability."
           />
