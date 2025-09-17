@@ -42,13 +42,6 @@ const Contact = () => {
   }, [status]);
 
 
-
-
-
-
-
-
-
   return (
     <div className="pb-16 pt-16">
       <div className="w-[90%] md:w-[80%] lg:w-[70%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -151,27 +144,27 @@ const Contact = () => {
               type="text"
               name="name"
               placeholder="Name"
-              className="px-4 py-3.5 mt-6 font-bold bg-[#363659] text-white outline-none rounded-md
+              className="px-4 py-3.5 mt-6 font-semibold bg-[#363659] text-white outline-none rounded-md
           placeholder:text-white/70 w-full"
             />
             <input
               type="email"
               name="email"
               placeholder="Email Address"
-              className="px-4 font-bold mt-6 py-3.5 bg-[#363659] text-white outline-none rounded-md
+              className="px-4 font-semibold mt-6 py-3.5 bg-[#363659] text-white outline-none rounded-md
           placeholder:text-white/70 w-full"
             />
             <input
               type="text"
               name="mobil"
               placeholder="Mobile Number"
-              className="px-4 font-bold mt-6 py-3.5 bg-[#363659] text-white outline-none rounded-md
+              className="px-4 font-semibold mt-6 py-3.5 bg-[#363659] text-white outline-none rounded-md
           placeholder:text-white/70 w-full"
             />
             <textarea
               placeholder="Your Message"
               name="message"
-              className="px-4 font-bold mt-6 py-3.5 bg-[#363659] text-white outline-none rounded-md
+              className="px-4 font-semibold mt-6 py-3.5 bg-[#363659] text-white outline-none rounded-md
           placeholder:text-white/70 w-full h-[10rem]"
             />
             <button
