@@ -24,7 +24,7 @@ const Project = () => {
           className="cursor-pointer"
         >
           <Image
-            src="/Images/NetflixProjectImage.png"
+            src="/images/netflixgpt.png"
             alt="Netflix GPT"
             className="rounded-lg"
             width={800}
@@ -53,7 +53,7 @@ const Project = () => {
           className="cursor-pointer"
         >
           <Image
-            src="/Images/FoodApp.png"
+            src="/images/foodapp.png"
             alt="Food App"
             className="rounded-lg"
             width={800}
@@ -82,7 +82,7 @@ const Project = () => {
           className="cursor-pointer"
         >
           <Image
-            src="/Images/InterestProject.png"
+            src="/images/interestproject.png"
             alt="Interest Calculator"
             className="rounded-lg"
             width={800}
@@ -109,7 +109,7 @@ const Project = () => {
           className="cursor-pointer"
         >
           <Image
-            src="/Images/GeneratorProject.png"
+            src="/images/passwordgenerator.png"
             alt="Password Generator"
             className="rounded-lg"
             width={800}
