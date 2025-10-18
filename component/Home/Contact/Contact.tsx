@@ -74,48 +74,48 @@ const Contact = () => {
             </div>
             {/* Social Icons */}
             <div className="flex items-center mt-8 space-x-3">
-      {/* GitHub */}
-      <Link
-        href="https://github.com/Imvishu3012"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div
-          className="w-14 h-14 bg-blue-950/60 rounded-full flex items-center justify-center cursor-pointer
+              {/* GitHub */}
+              <Link
+                href="https://github.com/Imvishu3012"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div
+                  className="w-14 h-14 bg-blue-950/60 rounded-full flex items-center justify-center cursor-pointer
           flex-col hover:bg-gray-900 hover:ring-2 hover:ring-white transition-all duration-300 "
-        >
-          <FiGithub className="text-white h-6 w-6" />
-        </div>
-      </Link>
+                >
+                  <FiGithub className="text-white h-6 w-6" />
+                </div>
+              </Link>
 
-      {/* LinkedIn */}
-      <Link
-        href="https://shorturl.at/jBl6Y"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div
-          className="w-14 h-14 bg-blue-950/60 rounded-full flex items-center justify-center cursor-pointer
+              {/* LinkedIn */}
+              <Link
+                href="https://shorturl.at/jBl6Y"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div
+                  className="w-14 h-14 bg-blue-950/60 rounded-full flex items-center justify-center cursor-pointer
           flex-col hover:bg-blue-600 transition-all duration-300 "
-        >
-          <FiLinkedin className="text-white h-6 w-6" />
-        </div>
-      </Link>
+                >
+                  <FiLinkedin className="text-white h-6 w-6" />
+                </div>
+              </Link>
 
-      {/* Twitter */}
-      <Link
-        href="https://twitter.com/your-username"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div
-          className="w-14 h-14 bg-blue-950/60 rounded-full flex items-center justify-center cursor-pointer
+              {/* Twitter */}
+              <Link
+                href="https://twitter.com/your-username"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div
+                  className="w-14 h-14 bg-blue-950/60 rounded-full flex items-center justify-center cursor-pointer
           flex-col hover:bg-sky-400 transition-all duration-300 "
-        >
-          <FiTwitter className="text-white h-6 w-6" />
-        </div>
-      </Link>
-    </div>
+                >
+                  <FiTwitter className="text-white h-6 w-6" />
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
         {/* form */}
@@ -124,22 +124,21 @@ const Contact = () => {
           data-aos-anchor-placement="top-center"
           data-aos-delay="0"
           className="md:p-10 p-5 bg-[#131332] rounded-lg"
-        >  
-        {/* Alert Banner */}
-  {status && (
-    <div
-      className={`absolute -top-12 left-5 right-5 md:left-10 md:right-10 text-center px-6 py-3 rounded-full text-white font-medium shadow-md transition-all duration-500 ${
-        alertType === "success" ? "bg-green-600" : "bg-red-600"
-      }`}
-    >
-      {status}
-    </div>
-  )}
-
+        >
+          {/* Alert Banner */}
 
           {/* Used formstree for data receiving through form on my email */}
 
-          <form onSubmit={handleSubmit}>  
+          <form onSubmit={handleSubmit}>
+            {status && (
+              <div
+                className={`absolute -top-12 left-5 right-5 md:left-10 md:right-10 text-center px-6 py-3 rounded-full text-white font-medium shadow-md transition-all duration-500 ${
+                  alertType === "success" ? "bg-green-600" : "bg-red-600"
+                }`}
+              >
+                {status}
+              </div>
+            )}
             <input
               type="text"
               name="name"
@@ -157,7 +156,7 @@ const Contact = () => {
             <input
               type="text"
               name="mobil"
-              placeholder="Mobile Number"
+              placeholder="Mobile Number (Optional)"
               className="px-4 font-semibold mt-6 py-3.5 bg-[#363659] text-white outline-none rounded-md
           placeholder:text-white/70 w-full"
             />
