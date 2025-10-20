@@ -1,65 +1,82 @@
+"use client";
 import React from "react";
 import ResumeCard from "./ResumeCard";
+import { motion } from "framer-motion";
 import { FaBriefcase, FaReact, FaGraduationCap } from "react-icons/fa";
 import { BiCertification } from "react-icons/bi";
 
 const Resume = () => {
   return (
-    <div className="pt-20 pb-16">
-      <div className="w-[90%] sm:w-[70%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
-        {/* WORK EXPERIENCE */}
-        <div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-white">
+    <section className="pt-20 pb-16">
+      <div className="w-[90%] sm:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+        {/* Work Experience */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-10">
             My Work <span className="text-cyan-300">Experience</span>
           </h1>
-          <div className="mt-10" data-aos="zoom-in" data-aos-anchor-placement="top-center">
-            <ResumeCard 
-              Icon={FaBriefcase} 
-              role="Business Development Trainee" 
-              company="Intellipaat Software Solutions"
-              date="Jun 2023 - Dec 2023"
-              description="Gained experience in client relations, technical solution presentations, and business development in EdTech sector with focus on achieving performance-based targets."
-            />
-            <ResumeCard 
-              Icon={FaReact} 
-              role="Frontend Developer" 
-              company="Self-taught"
-              date="Jan 2024 - Present"
-              description="Building web applications with React, Next.js, TypeScript, and Tailwind CSS, and seeking full-time opportunities to apply and grow my skills in a collaborative environment."
-            />
-          </div>
-        </div>
 
-        {/* EDUCATION & CERTIFICATIONS */}
-        <div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-white">
-            My <span className="text-cyan-300">Education</span>
+          <ResumeCard
+            Icon={FaReact}
+            role="Frontend Developer"
+            company="Self-taught"
+            date="Jan 2024 - Present"
+            description="Building web apps using React, Next.js, TypeScript, and Tailwind CSS. Seeking full-time opportunities to apply my skills."
+            index={0}
+          />
+          <ResumeCard
+            Icon={FaBriefcase}
+            role="Business Development Associate"
+            company="Intellipaat Software Solutions"
+            date="Jun 2023 - Dec 2023"
+            description="Gained experience in client relations, technical solution presentations, and business development in the EdTech sector."
+            index={1}
+          />
+        </motion.div>
+
+        {/* Education */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-10 inline-block whitespace-nowrap">
+            My Education
+            <span className="text-cyan-300"> & Certificates</span>
           </h1>
-          <div className="mt-10" data-aos="zoom-out" data-aos-anchor-placement="top-center" data-aos-delay="300">
-            <ResumeCard 
-              Icon={FaGraduationCap} 
-              role="BTech Computer Science Engineering" 
-              company="MIET College"
-              date="Aug 2019 - Jun 2023"
-              description="Comprehensive foundation in computer science fundamentals, data structures, algorithms, and software development practices with hands-on project experience."
-            />
-            <ResumeCard 
-              Icon={BiCertification} 
-              role="Great Learning Certificate" 
-              date="Mar 2024 - Aug 2024"
-              description="Specialized technical training program enhancing development skills, industry knowledge, and modern programming practices for professional growth."
-            />
-            <ResumeCard 
-              Icon={FaReact} 
-              role="Namaste React Course" 
-              company="by Akshay Saini"
-              date="Nov 2024 - Apr 2025"
-              description="Advanced React.js course covering modern practices, hooks, context, performance optimization, testing, and real-world application development by industry expert."
-            />
-          </div>
-        </div>
+
+          <ResumeCard
+            Icon={FaReact}
+            role="Namaste React"
+            company="by Akshay Saini"
+            date="Nov 2024 - Apr 2025"
+            description="Learned advanced React concepts: hooks, context, performance optimization, testing, and best practices."
+            index={0}
+          />
+          <ResumeCard
+            Icon={BiCertification}
+            role="JavaScript Projects"
+            company="by Great Learning"
+            date="Mar 2024 - Aug 2024"
+            description="Applied advanced JavaScript concepts to build interactive, state-driven projects showcasing strong command of DOM manipulation."
+            index={1}
+          />
+          <ResumeCard
+            Icon={FaGraduationCap}
+            role="B.Tech in Computer Science & Engineering"
+            company="Meerut Institute of Engineering & Technology"
+            date="Aug 2019 - Jun 2023"
+            description="Built a strong foundation in programming, data structures, algorithms, and software engineering principles."
+            index={2}
+          />
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 

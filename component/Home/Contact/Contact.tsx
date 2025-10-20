@@ -1,13 +1,12 @@
+"use client";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { BiEnvelope, BiMap, BiPhone } from "react-icons/bi";
 import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
-
+import { motion } from "framer-motion";
 
 const Contact = () => {
-
-  //Just to handle Form
- const [status, setStatus] = useState("");
+  const [status, setStatus] = useState("");
   const [alertType, setAlertType] = useState<"success" | "error" | "">("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -30,23 +29,26 @@ const Contact = () => {
     }
   };
 
-  // Auto-hide alert after 5 sec when status changes
   useEffect(() => {
     if (status) {
       const timer = setTimeout(() => {
         setStatus("");
         setAlertType("");
       }, 5000);
-      return () => clearTimeout(timer); // cleanup
+      return () => clearTimeout(timer);
     }
   }, [status]);
-
 
   return (
     <div className="pb-16 pt-16">
       <div className="w-[90%] md:w-[80%] lg:w-[70%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        {/* Text Content */}
-        <div>
+        {/* ✨ Left Section Animation */}
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
           <h1 className="text-gray-200 font-bold text-3xl sm:text-4xl lg:text-5xl">
             Schedule a call with me to see if I can help
           </h1>
@@ -54,7 +56,7 @@ const Contact = () => {
             Reach out to me today and let’s discuss how I can help you achieve
             your goals.
           </p>
-          {/* Info */}
+
           <div className="mt-7">
             <div className="flex space-x-2 items-center mb-4">
               <BiPhone className="w-9 h-9 text-cyan-300" />
@@ -72,109 +74,126 @@ const Contact = () => {
                 Mumbai, Maharashtra
               </p>
             </div>
-            {/* Social Icons */}
-            <div className="flex items-center mt-8 space-x-3">
-              {/* GitHub */}
-              <Link
-                href="https://github.com/Imvishu3012"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div
-                  className="w-14 h-14 bg-blue-950/60 rounded-full flex items-center justify-center cursor-pointer
-          flex-col hover:bg-gray-900 hover:ring-2 hover:ring-white transition-all duration-300 "
-                >
-                  <FiGithub className="text-white h-6 w-6" />
-                </div>
-              </Link>
 
-              {/* LinkedIn */}
-              <Link
-                href="https://shorturl.at/jBl6Y"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div
-                  className="w-14 h-14 bg-blue-950/60 rounded-full flex items-center justify-center cursor-pointer
-          flex-col hover:bg-blue-600 transition-all duration-300 "
+            {/* ✨ Social Icons with Staggered Animation */}
+            <motion.div
+              className="flex items-center mt-8 space-x-3"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                visible: {
+                  transition: {
+                    staggerChildren: 0.2,
+                  },
+                },
+              }}
+            >
+              {[
+                {
+                  href: "https://github.com/Imvishu3012",
+                  icon: <FiGithub className="text-white h-6 w-6" />,
+                  bg: "hover:ring-2 hover:ring-white hover:bg-gray-900",
+                },
+                {
+                  href: "https://shorturl.at/jBl6Y",
+                  icon: <FiLinkedin className="text-white h-6 w-6" />,
+                  bg: "hover:bg-blue-600",
+                },
+                {
+                  href: "https://twitter.com/your-username",
+                  icon: <FiTwitter className="text-white h-6 w-6" />,
+                  bg: "hover:bg-sky-400",
+                },
+              ].map((social, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  variants={{
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      transition: { duration: 0.4 },
+                    },
+                  }}
                 >
-                  <FiLinkedin className="text-white h-6 w-6" />
-                </div>
-              </Link>
-
-              {/* Twitter */}
-              <Link
-                href="https://twitter.com/your-username"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div
-                  className="w-14 h-14 bg-blue-950/60 rounded-full flex items-center justify-center cursor-pointer
-          flex-col hover:bg-sky-400 transition-all duration-300 "
-                >
-                  <FiTwitter className="text-white h-6 w-6" />
-                </div>
-              </Link>
-            </div>
+                  <Link
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div
+                      className={`w-14 h-14 bg-blue-950/60 rounded-full flex items-center justify-center cursor-pointer ${social.bg} transition-all duration-300`}
+                    >
+                      {social.icon}
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
-        </div>
-        {/* form */}
-        <div
-          data-aos="zoom-in"
-          data-aos-anchor-placement="top-center"
-          data-aos-delay="0"
-          className="md:p-10 p-5 bg-[#131332] rounded-lg"
+        </motion.div>
+
+        {/* ✨ Form Section Animation */}
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="md:p-10 p-5 bg-[#131332] rounded-lg relative overflow-hidden"
         >
-          {/* Alert Banner */}
-
-          {/* Used formstree for data receiving through form on my email */}
-
-          <form onSubmit={handleSubmit}>
-            {status && (
-              <div
-                className={`absolute -top-12 left-5 right-5 md:left-10 md:right-10 text-center px-6 py-3 rounded-full text-white font-medium shadow-md transition-all duration-500 ${
-                  alertType === "success" ? "bg-green-600" : "bg-red-600"
-                }`}
-              >
-                {status}
-              </div>
-            )}
+          <form onSubmit={handleSubmit} className="space-y-6 relative">
             <input
               type="text"
               name="name"
               placeholder="Name"
-              className="px-4 py-3.5 mt-6 font-semibold bg-[#363659] text-white outline-none rounded-md
-          placeholder:text-white/70 w-full"
+              className="px-4 py-3.5 font-semibold bg-[#363659] text-white outline-none rounded-md placeholder:text-white/70 w-full"
             />
             <input
               type="email"
               name="email"
               placeholder="Email Address"
-              className="px-4 font-semibold mt-6 py-3.5 bg-[#363659] text-white outline-none rounded-md
-          placeholder:text-white/70 w-full"
+              className="px-4 py-3.5 font-semibold bg-[#363659] text-white outline-none rounded-md placeholder:text-white/70 w-full"
             />
             <input
               type="text"
               name="mobil"
               placeholder="Mobile Number (Optional)"
-              className="px-4 font-semibold mt-6 py-3.5 bg-[#363659] text-white outline-none rounded-md
-          placeholder:text-white/70 w-full"
+              className="px-4 py-3.5 font-semibold bg-[#363659] text-white outline-none rounded-md placeholder:text-white/70 w-full"
             />
             <textarea
               placeholder="Your Message"
               name="message"
-              className="px-4 font-semibold mt-6 py-3.5 bg-[#363659] text-white outline-none rounded-md
-          placeholder:text-white/70 w-full h-[10rem]"
+              className="px-4 py-3.5 font-semibold bg-[#363659] text-white outline-none rounded-md placeholder:text-white/70 w-full h-[10rem]"
             />
-            <button
-              type="submit"
-              className="mt-8 px-12 py-4 bg-blue-950 hover:bg-blue-900 transition-all duration-300 cursor-pointer
-          text-white rounded-full active:scale-95"
-            >
-              Send Message
-            </button>
+
+            <div className="relative flex items-center justify-between mt-2">
+              <motion.button
+                type="submit"
+                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+                className="px-12 py-4 bg-blue-950 hover:bg-blue-900 transition-all duration-300 cursor-pointer text-white rounded-full"
+              >
+                Send Message
+              </motion.button>
+
+              {/* ✨ Floating Right Alert */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={status ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+                transition={{ duration: 0.3 }}
+                className={`absolute right-0 -top-12 sm:-top-14 text-sm sm:text-base px-4 py-2 rounded-md font-medium shadow-md text-white backdrop-blur-md border border-white/10 ${
+                  alertType === "success"
+                    ? "bg-green-500/80 text-white"
+                    : "bg-red-400/80 text-white"
+                } ${!status ? "hidden" : ""}`}
+              >
+                {status}
+              </motion.div>
+            </div>
           </form>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
