@@ -59,7 +59,7 @@ const Nav = ({openNav}:Props) => {
           {/* CV button */}
           <a
             href="/Vishal-Prajapati-Resume.pdf"
-            download="Vishal_Resume.pdf"
+            download="Vishal-Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3.5 w-fit text-sm cursor-pointer rounded-lg bg-blue-800 
