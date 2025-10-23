@@ -62,7 +62,7 @@ const Nav = ({openNav}:Props) => {
             download="Vishal-Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="lg:px-8 lg:py-3.5 px-3 py-3 w-fit text-sm cursor-pointer rounded-lg bg-blue-800 
+            className="lg:px-8 lg:py-3.5 px-3 py-2 w-fit text-sm cursor-pointer rounded-lg bg-blue-800 
   hover:bg-blue-900 transition-all duration-300 text-white flex items-center space-x-2"
           >
             <BiDownload className="w-3 h-3 lg:w-5 lg:h-5 " />
