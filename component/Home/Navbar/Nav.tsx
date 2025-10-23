@@ -62,11 +62,11 @@ const Nav = ({openNav}:Props) => {
             download="Vishal-Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3.5 w-fit text-sm cursor-pointer rounded-lg bg-blue-800 
+            className="lg:px-8 lg:py-3.5 px-2 py-2 w-fit text-sm cursor-pointer rounded-lg bg-blue-800 
   hover:bg-blue-900 transition-all duration-300 text-white flex items-center space-x-2"
           >
-            <BiDownload className="w-fit h-fit lg:w-5 lg:h-5" />
-            <span>Download CV</span>
+            <BiDownload className="w-2 h-2 lg:w-5 lg:h-5 " />
+            <span className="text-xs lg:text-sm">Download CV</span>
           </a>
           {/* Burger Menu */}
           <HiBars3BottomRight
